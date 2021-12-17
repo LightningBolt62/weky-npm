@@ -1,6 +1,6 @@
 # Fast Type
 
-## Calling the chaoswords function
+## Calling the fasttype function
 
 ```javascript
 await FastType({
