@@ -1,0 +1,35 @@
+# Fight
+
+## Calling the fight function
+
+```javascript
+await Fight({
+    message: message,
+    opponent: message.mentions.users.first(),
+    embed: {
+        title: 'Fight | Weky Development',
+        color: '#5865F2',
+        footer: '©️ Weky Development',
+        timestamp: true
+    },
+    buttons: {
+      hit: 'Hit',
+      heal: 'Heal',
+      cancel: 'Stop',
+      accept: 'Accept',
+      deny: 'Deny'
+    },
+    acceptMessage: '<@{{challenger}}> has challenged <@{{opponent}}> for a fight!',
+    winMessage: 'GG, <@{{winner}}> won the fight!',
+    endMessage: '<@{{opponent}}> didn\'t answer in time. So, I dropped the game!',
+    cancelMessage: '<@{{opponent}}> refused to have a fight with you!',
+    fightMessage: '{{player}} you go first!',
+    opponentsTurnMessage: 'Please wait for your opponents move!',
+    highHealthMessage: 'You cannot heal if your HP is above 80!',
+    lowHealthMessage: 'You cannot cancel the fight if your HP is below 50!',
+    returnWinner: false,
+    othersMessage: 'Only {{author}} can use the buttons!'
+});
+```
+
+<table><thead><tr><th>Param</th><th>Description</th><th>Type</th><th data-type="checkbox">Required</th><th>Default</th></tr></thead><tbody><tr><td><a href="https://discord.js.org/#/docs/main/stable/class/Message"><code>message</code></a></td><td>The message that triggered this function.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></td><td>true</td><td><code>null</code></td></tr><tr><td><a href="https://discord.js.org/#/docs/main/stable/class/User"><code>opponent</code></a></td><td>The user to play the game with</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">object</a></td><td>true</td><td><code>null</code></td></tr><tr><td><a href="https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=title"><code>embed.title</code></a></td><td>The title of the embed.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>false</td><td>Fight | Weky Development</td></tr><tr><td><a href="https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=color"><code>embed.color</code></a></td><td>The color of the embed.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>false</td><td>#5865F2</td></tr><tr><td><a href="https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=footer"><code>embed.footer</code></a></td><td>The footer of the embed.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>false</td><td>©️ Weky Development</td></tr><tr><td><a href="https://discord.js.org/#/docs/main/stable/class/MessageEmbed?scrollTo=timestamp"><code>embed.timestamp</code></a></td><td>Should there be a timestamp in the embed.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></td><td>false</td><td><code>true</code></td></tr><tr><td><code>buttons.hit</code></td><td>The label of the "Hit" button.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>true</td><td><code>undefined</code></td></tr><tr><td><code>buttons.heal</code></td><td>The label of the "Heal" button.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>true</td><td><code>undefined</code></td></tr><tr><td><code>buttons.cancel</code></td><td>The label of the "Cancel" button.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>true</td><td><code>undefined</code></td></tr><tr><td><code>buttons.accept</code></td><td>The label of the "Accept" button.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>true</td><td><code>undefined</code></td></tr><tr><td><code>buttons.deny</code></td><td>The label of the "Deny" button.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>true</td><td><code>undefined</code></td></tr><tr><td><code>acceptMessage</code></td><td>The text to display when inviting the opponent to the game.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>false</td><td>&#x3C;@{{challenger}}> has challenged &#x3C;@{{opponent}}> for a fight!</td></tr><tr><td><code>winMessage</code></td><td>The text to display when a user wins the game.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>false</td><td>GG, &#x3C;@{{winner}}> won the fight!</td></tr><tr><td><code>cancelMessage</code></td><td>The text to display when the opponent declines the game or does not accept/deny in time.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>false</td><td>&#x3C;@{{opponent}}> refused to have a fight with you!</td></tr><tr><td><code>fightMessage</code></td><td>The text to display to a player inviting them to make the first move.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>false</td><td>{{player}} you go first!</td></tr><tr><td><code>opponentsTurnMessage</code></td><td>The text to display when the player tries to make a move during their opponents turn.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>false</td><td>Please wait for your opponents move!</td></tr><tr><td><code>highHealthMessage</code></td><td>The text to display when the player tries to heal themselves while having health above 80.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>false</td><td>You cannot heal if your HP is above 80!</td></tr><tr><td><code>lowHealthMessage</code></td><td>The text to display when the player tries to cancel the game while having below 50.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>false</td><td>You cannot cancel the fight if your HP is below 50!</td></tr><tr><td><code>returnWinner</code></td><td></td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></td><td>false</td><td><code>false</code></td></tr><tr><td><code>othersMessage</code></td><td>The text to display when another user tries to use the button.</td><td><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></td><td>false</td><td>Only &#x3C;@{{author}}> can use the buttons!</td></tr></tbody></table>
