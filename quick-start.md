@@ -40,6 +40,4 @@ await Calculator({
 });
 ```
 
-{% embed url="https://camo.githubusercontent.com/c4720ae3878282b73a79e2dce845d501a8b7481eac1411ad02d13e2ef8b9c15e/68747470733a2f2f692e696d6775722e636f6d2f444564684848642e706e67" %}
-Output
-{% endembed %}
+![Output](https://lightningbolt.is-inside.me/mv18tcTG.png)
